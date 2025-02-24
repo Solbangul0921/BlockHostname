@@ -1,0 +1,10 @@
+# 이곳에 금지할 호스트 이름을 적어주세요.
+# 주의점 위어드 호스트를 사용 중일 시 도메인을 CNAME로 하셔야 됩니다.
+# 기본적인 세팅 방법은 꿀팁 내용을 확인해주세요!
+block-hostname:
+  - "hostname:port"
+
+# 해당 기능을 "true"로 변경 시 아래 화이트 리스트 호스트로만 접속이 가능합니다.
+enable-whitelist: false
+whitelist-hostname:
+  - "hostname:port"

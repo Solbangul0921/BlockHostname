@@ -1,0 +1,41 @@
+plugins {
+    `java-library`
+    id("io.papermc.paperweight.userdev") version "1.7.7"
+    id("com.github.johnrengelman.shadow") version "7.1.2"
+}
+
+group = "xyz.solbangul.blockhostname"
+version = "1.0"
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly("org.projectlombok:lombok:1.18.30")
+    annotationProcessor("org.projectlombok:lombok:1.18.30")
+    paperweight.paperDevBundle("1.21-R0.1-SNAPSHOT")
+}
+
+tasks {
+    withType<JavaCompile>().configureEach {
+        options.release.set(21)
+    }
+
+    javadoc {
+        options.encoding = Charsets.UTF_8.name()
+    }
+
+    shadowJar {
+        archiveFileName.set("BlockHostname.jar")
+        destinationDirectory.set(File("C:\\Users\\sjh05\\Desktop\\서버\\1.21.4\\plugins"))
+    }
+
+    build {
+        dependsOn(shadowJar)
+    }
+}
