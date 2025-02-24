@@ -32,7 +32,7 @@ tasks {
 
     shadowJar {
         archiveFileName.set("BlockHostname.jar")
-        destinationDirectory.set(File("C:\\Users\\sjh05\\Desktop\\서버\\1.21.4\\plugins"))
+        destinationDirectory.set(File("경로"))
     }
 
     build {
